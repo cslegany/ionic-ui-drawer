@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Ionic Drawer
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scrollY="false">
+  <div class="backdrop" [ngClass]="backdropVisible ? 'fade-in' : 'fade-out'" tappable (click)="drawer.toggleDrawer()"></div>
+
+  <ion-button (click)="drawer.toggleDrawer()" expand="full">Toggle the drawer</ion-button>
+
+  <app-drawer (openStateChanged)="toggleBackdrop($event)" #drawer></app-drawer>
+</ion-content>
